@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
+/* suggestion for choosing color palettes: https://colorhunt.co/ */
 :root {
-    --bg-color: #1E1E1E;
-    --green: #6FFF57;
+    --bg-color: #09122C;
+    --salmon: #E17564;
     --white: #FFFFFF;
-    --active-btn: #3A375E;
-    --inactive-btn: rgba(58, 55, 94, 0.5);
-    --text-bg: rgba(58, 55, 94, 0.3);
+    --active-btn: #b1506d;
+    --inactive-btn: #522546;
+    --text-bg: #BE3144;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
 }
 
 .main-title span {
-    color: var(--green);
+    color: var(--salmon);
 }
 
 .button {
@@ -61,7 +62,7 @@ body {
 
 .button.active {
     background-color: var(--active-btn);
-    border-bottom: 4px solid var(--green);
+    border-bottom: 4px solid var(--salmon);
 }
 
 .tabs-content {
@@ -85,7 +86,7 @@ body {
 
 .tab-content-secondary-title {
     text-align: center;
-    color: var(--green);
+    color: var(--salmon);
     text-transform: uppercase;
 }
 
@@ -107,7 +108,7 @@ body {
 }
 
 .counter-digit-label {
-    color: var(--green);
+    color: var(--salmon);
     font-size: 20px;
     margin: 0;
 }

@@ -15,10 +15,10 @@ for (let i = 0; i < buttons.length; i++) {
 
 // Countdown functionality
 const goalDates = [
-    new Date("2025-01-15T00:00:00"), // Goal 01
-    new Date("2025-03-20T00:00:00"), // Goal 02
-    new Date("2025-06-30T00:00:00"), // Goal 03
-    new Date("2025-12-31T00:00:00")  // Goal 04
+    new Date("2030-01-15T00:00:00"), // Goal 01
+    new Date("2030-03-20T00:00:00"), // Goal 02
+    new Date("2030-06-30T00:00:00"), // Goal 03
+    new Date("2030-12-31T00:00:00")  // Goal 04
 ];
 
 function updateCountdown() {

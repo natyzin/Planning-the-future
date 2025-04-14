@@ -13,13 +13,21 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 const counters = document.querySelectorAll(".counter");
-const goalTime1 = new Date("2025-01-01T00:00:00"); // Updated to 2025
+const goalDate1 = new Date("2023-10-05T00:00:00");
 
-function updateCountdown() {
-    const currentTime = new Date();
-    counters[0].textContent = goalTime1 - currentTime; // Basic countdown display
+counters[0].textContent = calculateTime(goalDate1);
+
+function calculateTime(goalDate) {
+    let currentTime = new Date();
+    let timeRemaining = goalDate - currentTime;
+    let seconds = Math.floor(timeRemaining / 1000);
+    let minutes = Math.floor(seconds / 60);
+    let hours = Math.floor(minutes / 60);
+    let days = Math.floor(hours / 24);
+
+    seconds %= 60;
+    minutes %= 60;
+    hours %= 24;
+
+    return days + " days " + hours + " hours " + minutes + " minutes " + seconds + " seconds";
 }
-
-// Initial call and set interval for countdown
-updateCountdown();
-setInterval(updateCountdown, 1000);

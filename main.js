@@ -14,40 +14,39 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 // Countdown functionality
-const counters = document.querySelectorAll(".counter");
-const goalDate1 = new Date("2025-01-15T00:00:00");
-const goalDate2 = new Date("2025-03-20T00:00:00");
-const goalDate3 = new Date("2025-06-30T00:00:00");
-const goalDate4 = new Date("2025-12-31T00:00:00");
-const goalDates = [goalDate1, goalDate2, goalDate3, goalDate4];
-
-function calculateTime(goalDate) {
-    let currentTime = new Date();
-    let timeRemaining = goalDate - currentTime;
-    
-    if (timeRemaining <= 0) return "Goal Completed!";
-    
-    let seconds = Math.floor(timeRemaining / 1000);
-    let minutes = Math.floor(seconds / 60);
-    let hours = Math.floor(minutes / 60);
-    let days = Math.floor(hours / 24);
-
-    seconds %= 60;
-    minutes %= 60;
-    hours %= 24;
-
-    return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
-}
+const goalDates = [
+    new Date("2025-01-15T00:00:00"), // Goal 01
+    new Date("2025-03-20T00:00:00"), // Goal 02
+    new Date("2025-06-30T00:00:00"), // Goal 03
+    new Date("2025-12-31T00:00:00")  // Goal 04
+];
 
 function updateCountdown() {
-    for (let i = 0; i < counters.length; i++) {
-        counters[i].textContent = calculateTime(goalDates[i]);
+    const now = new Date();
+    
+    for (let i = 0; i < goalDates.length; i++) {
+        const timeRemaining = goalDates[i] - now;
+        
+        if (timeRemaining <= 0) {
+            document.getElementById(`days${i}`).textContent = "0";
+            document.getElementById(`hours${i}`).textContent = "0";
+            document.getElementById(`minutes${i}`).textContent = "0";
+            document.getElementById(`seconds${i}`).textContent = "0";
+            continue;
+        }
+        
+        const seconds = Math.floor(timeRemaining / 1000) % 60;
+        const minutes = Math.floor(timeRemaining / (1000 * 60)) % 60;
+        const hours = Math.floor(timeRemaining / (1000 * 60 * 60)) % 24;
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        
+        document.getElementById(`days${i}`).textContent = days;
+        document.getElementById(`hours${i}`).textContent = hours;
+        document.getElementById(`minutes${i}`).textContent = minutes;
+        document.getElementById(`seconds${i}`).textContent = seconds;
     }
 }
 
-function startCountdown() {
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-}
-
-startCountdown();
+// Initialize countdown
+updateCountdown();
+setInterval(updateCountdown, 1000);

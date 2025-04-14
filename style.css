@@ -90,19 +90,35 @@ body {
 }
 
 .counter {
-    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.counter-digit {
+    padding: 0 16px;
     text-align: center;
+    min-width: 100px;
+}
+
+.counter-digit-number {
+    font-size: 80px;
+    margin: 0;
+}
+
+.counter-digit-label {
+    color: var(--green);
+    font-size: 20px;
+    margin: 0;
 }
 
 @media screen and (min-width: 768px) {
     .buttons {
         display: flex;
     }
-
     .button:first-child {
         border-radius: 40px 0 0 0;
     }
-
     .button:last-child {
         border-radius: 0 40px 0 0;
     }

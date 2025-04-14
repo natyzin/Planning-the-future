@@ -6,6 +6,7 @@
     --white: #FFFFFF;
     --active-btn: #3A375E;
     --inactive-btn: rgba(58, 55, 94, 0.5);
+    --text-bg: rgba(58, 55, 94, 0.3);
 }
 
 body {
@@ -63,13 +64,40 @@ body {
     border-bottom: 4px solid var(--green);
 }
 
+.tabs-content {
+    background-color: var(--text-bg);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content-main-title {
+    font-size: 28px;
+    text-align: center;
+}
+
+.tab-content-secondary-title {
+    text-align: center;
+    color: var(--green);
+    text-transform: uppercase;
+}
+
 @media screen and (min-width: 768px) {
     .buttons {
         display: flex;
     }
+
     .button:first-child {
         border-radius: 40px 0 0 0;
     }
+
     .button:last-child {
         border-radius: 0 40px 0 0;
     }

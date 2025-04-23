@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Year Goals</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+    <header class=" p-5">
+            <div id="acessibilidade" class="menu-acessibilidade">
+                <button id="botao-acessibilidade" class="btn btn-primary fw-bold rotacao-botao">
+                  Acessibilidade
+                </button>
+                <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista ">
+                  <button id="aumentar-fonte" class="btn btn-primary fw-bold">A +</button>       
+                  <button id="diminuir-fonte" class="btn btn-primary fw-bold">A -</button>
+                  <button id="alterna-contraste" class="btn btn-primary fw-bold">
+                     <i class="bi bi-shadows"></i>
+                  </button>
+                </div>
+              </div>                         
+        </nav>
+    </header>
     <section class="main-content">
         <h2 class="main-title">My Year Goals<span>_</span></h2>
         <div class="content">
@@ -109,5 +126,6 @@
         </div>
     </section>
     <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
